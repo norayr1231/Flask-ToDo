@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css"
+    integrity="sha512-mqfYghA89C7o35P19p0J0ByAGF9ZHLVyFYlA1ymHmpTDvcDIXOy8oe5Tk5z5j5i5rOz2X9d1GXH1wkN/UaLNTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Website</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="url_for('index')">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about')}}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia eros vel enim convallis, a elementum
+      lorem faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc id
+      libero quam. Nam sit amet purus in enim interdum venenatis. Morbi quis enim et dolor vestibulum sodales. Proin
+      non mauris non diam ultricies tristique in ut mauris. Curabitur et sapien ullamcorper, dignissim lectus eget,
+      dignissim nulla. Nunc congue, nisl vel bibendum consequat, mauris felis tristique dolor, in consectetur dolor
+      metus vitae ex. Praesent vel leo at mi elementum ultricies.</p>
+
+    <p>Proin convallis sapien lacus, ut commodo sapien bibendum quis. Phasellus ut ex sed erat luctus commodo vel
+      a purus. Sed in arcu sed lacus dictum commodo. Morbi hendrerit elementum odio. Vivamus semper, nisl vel congue
+      pellentesque, ex velit suscipit turpis, eget feugiat quam justo vel nulla. Integer eget urna aliquam, ornare
+      ipsum vitae, fringilla nisi. Pellentesque vel molestie ante. Suspendisse eu ex non enim fermentum tristique
+      non vel risus. Suspendisse sit amet purus.</p>
+</div>
+
+</body>
