@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/index.css">
+  <title>To-Do</title>
+</head>
+<body>
+  <section class="main">
+    <div class="add-task">
+      <nav>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <p>Welcome {{current_user.username}}</p>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+      </nav>
+      <form action="" method="POST" class="add-form">
+        <input type="text" name="title" placeholder="Task Title...">
+        <input type="text" name="description" placeholder="Task Description...">
+        <button type="submit">Add</button>
+      </form>
+      <section class="tasks">
+        <div class="todo">
+          {% for task in task_list %}
+              <div class="single-task">
+                <h3>{{ task.title }}</h3>
+                <h4>{{ task.description }}</h4>
+                <h5>{{ task.date }}</h5>
+                <button>Delete</button>
+              </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+</section>
+</body>
+</html>
