@@ -21,10 +21,12 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+  border-radius: 10px;
   align-items: center;
   padding: 1rem;
   background-color: #f1f1f1;
-  color: #fff;
+  color: linear-gradient(to bottom, #8000ff, #E100FF);
+  font-weight: 700;
 }
 
 nav a {
@@ -67,21 +69,23 @@ nav p {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
-.add-form button[type="submit"] {
-  padding: 11px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
+.add-form button {
+  background-color: greenyellow;
+  padding: 7px;
+  padding-top: 6px;
+  padding-bottom: 5px;
   border-radius: 6px;
   margin-bottom: 20px;
-  margin-left: 25px;
+  margin-left: 15px;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
-.add-form button[type="submit"]:hover {
-  background-color: #2980b9;
+.add-form button:hover {
+  background-color: rgb(148, 219, 41);
 }
+
 
 .tasks {
   margin-top: 20px;
@@ -111,17 +115,16 @@ nav p {
   margin-bottom: 5px;
 }
 
-.single-task button {
+.single-task a {
   padding: 10px;
   background-color: #e74c3c;
   color: #fff;
   border: none;
   border-radius: 3px;
-  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
-.single-task button:hover {
+.single-task a:hover {
   background-color: #c0392b;
 }
 
@@ -156,20 +159,6 @@ nav p {
     font-size: 16px;
   }
 
-  .add-form button {
-    background-color: #E85A4F;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .add-form button:hover {
-    background-color: #C74339;
-  }
 
   .tasks {
     display: grid;
@@ -180,8 +169,12 @@ nav p {
   .single-task {
     background-color: #FFFFFF;
     border-radius: 5px;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
   }
 
   .single-task h3 {
@@ -203,19 +196,37 @@ nav p {
     color: #999999;
   }
 
-  .single-task button {
-    background-color: #E85A4F;
+  .single-task .actions{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .single-task .actions a {
     color: #FFFFFF;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 25px;
+
   }
 
-  .single-task button:hover {
+  .single-task .actions .edit-action{
+    background-color: rgb(255, 230, 0);
+  }
+
+  .single-task .actions .delete-action{
+    background-color: red;
+  }
+
+  .single-task .edit-action:hover {
+    background-color: rgb(236, 201, 0);
+  }
+
+  .single-task .delete-action:hover {
     background-color: #C74339;
   }
 }

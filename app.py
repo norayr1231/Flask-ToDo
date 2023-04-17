@@ -122,6 +122,40 @@ def dashboard():
     return render_template('dashboard.html', task_list=task_list)
 
 
+@app.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    task = Task.query.filter_by(id=id).first()
+    cur_user = int(current_user.get_id())
+    task_owner = task.user_id
+    print(cur_user)
+    print(task_owner)
+    if cur_user == task_owner:
+        db.session.delete(task)
+        db.session.commit()
+        return redirect(url_for('dashboard'))
+    
+    return redirect(url_for('dashboard'))
+
+
+
+@app.route('/edit/<int:id>', methods=['POST', 'GET'])
+@login_required
+def edit(id):
+    task = Task.query.filter_by(id=id).first()
+    cur_user = int(current_user.get_id())
+    task_owner = task.user_id
+    print(cur_user)
+    print(task_owner)
+    if cur_user == task_owner and request.method == 'POST':
+        task.title = request.form['update-title']
+        task.description = request.form['update-description']
+        db.session.commit()
+        return redirect(url_for('dashboard'))
+    
+    return redirect(url_for('dashboard'))
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')

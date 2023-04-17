@@ -21,7 +21,7 @@
       <form action="" method="POST" class="add-form">
         <input type="text" name="title" placeholder="Task Title...">
         <input type="text" name="description" placeholder="Task Description...">
-        <button type="submit">Add</button>
+        <button type="submit"><img src="static/img/add.svg" alt="delete" style="width: 24px;"></button>
       </form>
       <section class="tasks">
         <div class="todo">
@@ -30,7 +30,10 @@
                 <h3>{{ task.title }}</h3>
                 <h4>{{ task.description }}</h4>
                 <h5>{{ task.date }}</h5>
-                <button>Delete</button>
+                <div class="actions">
+                  <a href="/edit/{{task.id}}" class="edit-action"><img src="static/img/edit.svg" alt="delete" style="width: 24px;"></a>
+                  <a href="/delete/{{task.id}}" class="delete-action"><img src="static/img/delete.svg" alt="delete" style="width: 24px;"></a>
+                </div>
               </div>
           {% endfor %}
         </div>
