@@ -149,7 +149,7 @@ def edit(id):
     print(task_owner)
     if cur_user == task_owner and request.method == 'POST':
         task.title = request.form['update-title']
-        task.description = request.form['update-description']
+        task.description = request.form['update-desc']
         db.session.commit()
         return redirect(url_for('dashboard'))
     

@@ -31,7 +31,17 @@
                 <h4>{{ task.description }}</h4>
                 <h5>{{ task.date }}</h5>
                 <div class="actions">
-                  <a href="/edit/{{task.id}}" class="edit-action"><img src="static/img/edit.svg" alt="delete" style="width: 24px;"></a>
+                  <button class="open-window-btn"><img src="static/img/edit.svg" alt="delete" style="width: 24px;"></button>
+
+<div class="floating-window">
+  <form action="/edit/{{task.id}}" method="post">
+    <input type="text" class="input1" name="update-title" placeholder="New Title">
+    
+    <input type="text" class="input2"name="update-desc" placeholder="New Description">
+    
+    <button type="submit">Update</button>
+  </form>
+</div>
                   <a href="/delete/{{task.id}}" class="delete-action"><img src="static/img/delete.svg" alt="delete" style="width: 24px;"></a>
                 </div>
               </div>
@@ -40,5 +50,18 @@
       </section>
     </div>
 </section>
+<script>
+const openWindowBtns = document.querySelectorAll('.open-window-btn');
+
+openWindowBtns.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    const floatingWindow = event.currentTarget.nextElementSibling;
+    floatingWindow.style.display = 'block';
+  });
+});
+
+const floatingWindows = document.querySelectorAll('.floating-window');
+
+</script>
 </body>
 </html>

@@ -16,6 +16,41 @@ body {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 100%;
+}
+.floating-window {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 55px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+}
+
+.floating-window label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.floating-window input {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.floating-window button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 nav {
@@ -69,6 +104,7 @@ nav p {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .add-form button {
   background-color: greenyellow;
   padding: 7px;
@@ -112,16 +148,34 @@ nav p {
 .single-task h4,
 .single-task h5 {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .single-task a {
-  padding: 10px;
+  padding: 6px;
+  padding-top: 14px;
+  padding-bottom: 3px;
   background-color: #e74c3c;
-  color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: all 0.2s ease-in-out;
+}
+.open-window-btn{
+  background-color: rgb(255, 251, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.single-task .edit-action{
+  background-color: rgb(255, 238, 0);
+}
+.single-task .edit-action:hover{
+  background-color: rgba(255, 238, 0, 0.925);
 }
 
 .single-task a:hover {
